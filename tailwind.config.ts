@@ -30,6 +30,7 @@ module.exports = {
           500: "#7857FF",
           600: "#4318FF",
         },
+        'custom-pink': '#ffd0ec',
         dark: {
           400: "#7986AC",
           500: "#606C80",
