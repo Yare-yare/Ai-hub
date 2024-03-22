@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -315,7 +317,7 @@
   }
 
   .sidebar-logo {
-    @apply flex items-center gap-2 md:py-2;
+    @apply flex items-center justify-center gap-2 md:py-2;
   }
 
   .sidebar-nav {
