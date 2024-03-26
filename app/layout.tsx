@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import { ClerkProvider } from '@clerk/nextjs'
 import { Color } from "three/src/Three.js";
 import Head from "next/head";
-
+import { ThemeProvider } from "../components/ui/ThemeProvider";
 
 const IBMPlex = IBM_Plex_Sans({
   subsets: ["latin"],
@@ -25,14 +25,21 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider appearance={{
-      variables:{colorPrimary:'black'}
+      variables: { colorPrimary: 'red' , colorText: 'black'}
     }}>
       <html lang="en">
-      <Head>
-          <link rel="icon" href="/clipart427182.png" type="image/png"/>
+        <Head>
+          <link rel="icon" href="/clipart427182.png" type="image/png" />
         </Head>
-        <body className={cn('font-IBMPlex antialiased', IBMPlex.variable)}>{children}</body>
+        <body className={cn('font-IBMPlex antialiased', IBMPlex.variable)}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange>
+            {children}
+          </ThemeProvider></body>
       </html>
-      </ClerkProvider>
-  ); 
+    </ClerkProvider>
+  );
 }

@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation'
 import React from 'react'
 import { BackgroundGradientAnimation } from '../ui/background-gradient-animation'
 import { Button } from '../ui/button'
+import { ModeToggle } from './ModeToggle'
 
 const Sidebar = () => {
     const pathName = usePathname()
@@ -14,7 +15,7 @@ const Sidebar = () => {
         <aside className='sidebar'>
             <div className='flex size-full flex-col gap-4'>
                 <Link href='/' className='sidebar-logo'>
-                    <Image src='imagesAndIcons/logo.svg' alt='image' width={120} height={20} />
+                    <Image src='imagesAndIcons/Artificial-Intelligence--Streamline-Free-Illustrations.svg' alt='image' width={120} height={20} />
                 </Link>
 
                 {/* create a nav links */}
@@ -26,7 +27,7 @@ const Sidebar = () => {
                             {navLinks.slice(0, 6).map((link) => {
                                 const isActive = link.route === pathName
                                 return (
-                                    <li key={link.route} className={`sidebar-nav_element group ${isActive ? 'bg-gradient-to-r from-pink-400 to-green-200 text-white' : 'text-gray-700'}`}>
+                                    <li key={link.route} className={`sidebar-nav_element group ${isActive ? 'bg-gradient-to-br from-[#ffc49d] to-[#f58ac0]' : ''}`}>
                                         <Link className="sidebar-link" href={link.route}>
                                             <Image
                                                 src={link.icon}
@@ -47,7 +48,7 @@ const Sidebar = () => {
                                 const isActive = link.route === pathName
 
                                 return (
-                                    <li key={link.route} className={`sidebar-nav_element group ${isActive ? 'bg-gradient-to-r from-pink-400 to-green-200 text-white' : 'text-gray-700'
+                                    <li key={link.route} className={`sidebar-nav_element group ${isActive ? 'bg-gradient-to-br from-[#ffc49d] to-[#f58ac0]' : 'text-white-700'
                                         }`}>
                                         <Link className="sidebar-link" href={link.route}>
                                             <Image
@@ -66,7 +67,9 @@ const Sidebar = () => {
                             <li className="flex-center cursor-pointer gap-2 p-4">
                                 <UserButton afterSignOutUrl='/' showName />
                             </li>
+                            <ModeToggle />
                         </ul>
+                        
                     </SignedIn>
 
                     <SignedOut>
