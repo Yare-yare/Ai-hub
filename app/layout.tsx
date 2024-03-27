@@ -3,7 +3,6 @@ import { IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ClerkProvider } from '@clerk/nextjs'
-import { Color } from "three/src/Three.js";
 import Head from "next/head";
 import { ThemeProvider } from "../components/ui/ThemeProvider";
 
